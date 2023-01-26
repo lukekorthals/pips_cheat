@@ -1,3 +1,5 @@
+__version__ = 'dev'
+
 def cheat(exercise_number: str):
     solutions = {  # Solutions are stored in a dictionary with the question number as key
         "Q3.2P.1": "1. make sure you have seaborn installed and loaded with import seaborn as sns \n2. import seaborn as sns, \n3. generate random uniform data with dat = np.random.uniform(-10, 10, 1000) \n4. create the boxplot with plt.boxplot(dat) \n5. create the violinplot with sns.violinplot(dat) \n6. add points to the violinplot with sns.stripplot(dat, color='white') \n7. save the plot with plt.savefig('random_violinplot.png') \n8. show the plot with plt.show()",
