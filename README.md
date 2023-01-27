@@ -15,13 +15,6 @@ pip install git+https://github.com/lukekorthals/pips_cheat
 
 # How to use
 Call the function with a supported question ID (e.g., "Q3.2P.1") and you will receive the correct solution. 
-
-
-```python
-
-```
-
-
 ```python
 from pips_cheat import cheat
 cheat("Q3.2P.1")
