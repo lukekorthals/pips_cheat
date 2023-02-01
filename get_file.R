@@ -2,7 +2,7 @@ library(knitr)
 library(RCurl)
 
 
-fileurl <- "https://raw.githubusercontent.com/lukekorthals/pips_cheat/main/OpenBook.md"
+fileurl <- "https://raw.githubusercontent.com/lukekorthals/pips_cheat/main/OpenBookR.md"
 knitrRmd <- paste(readLines(textConnection(getURL(fileurl))), collapse="\n")
 
 setwd("C:/Users/luke-/Desktop/Python Repositories/pips_cheat/")
