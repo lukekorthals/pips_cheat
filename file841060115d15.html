@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+<title>Previous Exams</title>
+
+<script type="text/javascript">
+window.onload = function() {
+  var imgs = document.getElementsByTagName('img'), i, img;
+  for (i = 0; i < imgs.length; i++) {
+    img = imgs[i];
+    // center an image if it is the only element of its parent
+    if (img.parentElement.childElementCount === 1)
+      img.parentElement.style.textAlign = 'center';
+  }
+};
+</script>
+
+<!-- Styles for R syntax highlighter -->
+<style type="text/css">
+   pre .operator,
+   pre .paren {
+     color: rgb(104, 118, 135)
+   }
+
+   pre .literal {
+     color: #990073
+   }
+
+   pre .number {
+     color: #099;
+   }
+
+   pre .comment {
+     color: #998;
+     font-style: italic
+   }
+
+   pre .keyword {
+     color: #900;
+     font-weight: bold
+   }
+
+   pre .identifier {
+     color: rgb(0, 0, 0);
+   }
+
+   pre .string {
+     color: #d14;
+   }
+</style>
+
+<!-- R syntax highlighter -->
+<script type="text/javascript">
+var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function f(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function b(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function h(t,s){var p="";for(var r=0;r<t.childNodes.length;r++){if(t.childNodes[r].nodeType==3){var q=t.childNodes[r].nodeValue;if(s){q=q.replace(/\n/g,"")}p+=q}else{if(t.childNodes[r].nodeName=="BR"){p+="\n"}else{p+=h(t.childNodes[r])}}}if(/MSIE [678]/.test(navigator.userAgent)){p=p.replace(/\r/g,"\n")}return p}function a(s){var r=s.className.split(/\s+/);r=r.concat(s.parentNode.className.split(/\s+/));for(var q=0;q<r.length;q++){var p=r[q].replace(/^language-/,"");if(e[p]){return p}}}function c(q){var p=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{if(s.childNodes[r].nodeType==1){p.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);p.push({event:"stop",offset:t,node:s.childNodes[r]})}}}}return t})(q,0);return p}function k(y,w,x){var q=0;var z="";var s=[];function u(){if(y.length&&w.length){if(y[0].offset!=w[0].offset){return(y[0].offset<w[0].offset)?y:w}else{return w[0].event=="start"?y:w}}else{return y.length?y:w}}function t(D){var A="<"+D.nodeName.toLowerCase();for(var B=0;B<D.attributes.length;B++){var C=D.attributes[B];A+=" "+C.nodeName.toLowerCase();if(C.value!==undefined&&C.value!==false&&C.value!==null){A+='="'+m(C.value)+'"'}}return A+">"}while(y.length||w.length){var v=u().splice(0,1)[0];z+=m(x.substr(q,v.offset-q));q=v.offset;if(v.event=="start"){z+=t(v.node);s.push(v.node)}else{if(v.event=="stop"){var p,r=s.length;do{r--;p=s[r];z+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);s.splice(r,1);while(r<s.length){z+=t(s[r]);r++}}}}return z+m(x.substr(q))}function j(){function q(x,y,v){if(x.compiled){return}var u;var s=[];if(x.k){x.lR=f(y,x.l||hljs.IR,true);for(var w in x.k){if(!x.k.hasOwnProperty(w)){continue}if(x.k[w] instanceof Object){u=x.k[w]}else{u=x.k;w="keyword"}for(var r in u){if(!u.hasOwnProperty(r)){continue}x.k[r]=[w,u[r]];s.push(r)}}}if(!v){if(x.bWK){x.b="\\b("+s.join("|")+")\\s"}x.bR=f(y,x.b?x.b:"\\B|\\b");if(!x.e&&!x.eW){x.e="\\B|\\b"}if(x.e){x.eR=f(y,x.e)}}if(x.i){x.iR=f(y,x.i)}if(x.r===undefined){x.r=1}if(!x.c){x.c=[]}x.compiled=true;for(var t=0;t<x.c.length;t++){if(x.c[t]=="self"){x.c[t]=x}q(x.c[t],y,false)}if(x.starts){q(x.starts,y,false)}}for(var p in e){if(!e.hasOwnProperty(p)){continue}q(e[p].dM,e[p],true)}}function d(B,C){if(!j.called){j();j.called=true}function q(r,M){for(var L=0;L<M.c.length;L++){if((M.c[L].bR.exec(r)||[null])[0]==r){return M.c[L]}}}function v(L,r){if(D[L].e&&D[L].eR.test(r)){return 1}if(D[L].eW){var M=v(L-1,r);return M?M+1:0}return 0}function w(r,L){return L.i&&L.iR.test(r)}function K(N,O){var M=[];for(var L=0;L<N.c.length;L++){M.push(N.c[L].b)}var r=D.length-1;do{if(D[r].e){M.push(D[r].e)}r--}while(D[r+1].eW);if(N.i){M.push(N.i)}return f(O,M.join("|"),true)}function p(M,L){var N=D[D.length-1];if(!N.t){N.t=K(N,E)}N.t.lastIndex=L;var r=N.t.exec(M);return r?[M.substr(L,r.index-L),r[0],false]:[M.substr(L),"",true]}function z(N,r){var L=E.cI?r[0].toLowerCase():r[0];var M=N.k[L];if(M&&M instanceof Array){return M}return false}function F(L,P){L=m(L);if(!P.k){return L}var r="";var O=0;P.lR.lastIndex=0;var M=P.lR.exec(L);while(M){r+=L.substr(O,M.index-O);var N=z(P,M);if(N){x+=N[1];r+='<span class="'+N[0]+'">'+M[0]+"</span>"}else{r+=M[0]}O=P.lR.lastIndex;M=P.lR.exec(L)}return r+L.substr(O,L.length-O)}function J(L,M){if(M.sL&&e[M.sL]){var r=d(M.sL,L);x+=r.keyword_count;return r.value}else{return F(L,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){y+=L;M.buffer=""}else{if(M.eB){y+=m(r)+L;M.buffer=""}else{y+=L;M.buffer=r}}D.push(M);A+=M.r}function G(N,M,Q){var R=D[D.length-1];if(Q){y+=J(R.buffer+N,R);return false}var P=q(M,R);if(P){y+=J(R.buffer+N,R);I(P,M);return P.rB}var L=v(D.length-1,M);if(L){var O=R.cN?"</span>":"";if(R.rE){y+=J(R.buffer+N,R)+O}else{if(R.eE){y+=J(R.buffer+N,R)+O+m(M)}else{y+=J(R.buffer+N+M,R)+O}}while(L>1){O=D[D.length-2].cN?"</span>":"";y+=O;L--;D.length--}var r=D[D.length-1];D.length--;D[D.length-1].buffer="";if(r.starts){I(r.starts,"")}return R.rE}if(w(M,R)){throw"Illegal"}}var E=e[B];var D=[E.dM];var A=0;var x=0;var y="";try{var s,u=0;E.dM.buffer="";do{s=p(C,u);var t=G(s[0],s[1],s[2]);u+=s[0].length;if(!t){u+=s[1].length}}while(!s[2]);if(D.length>1){throw"Illegal"}return{r:A,keyword_count:x,value:y}}catch(H){if(H=="Illegal"){return{r:0,keyword_count:0,value:m(C)}}else{throw H}}}function g(t){var p={keyword_count:0,r:0,value:m(t)};var r=p;for(var q in e){if(!e.hasOwnProperty(q)){continue}var s=d(q,t);s.language=q;if(s.keyword_count+s.r>r.keyword_count+r.r){r=s}if(s.keyword_count+s.r>p.keyword_count+p.r){r=p;p=s}}if(r.language){p.second_best=r}return p}function i(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function n(t,w,r){var x=h(t,r);var v=a(t);var y,s;if(v){y=d(v,x)}else{return}var q=c(t);if(q.length){s=document.createElement("pre");s.innerHTML=y.value;y.value=k(q,c(s),x)}y.value=i(y.value,w,r);var u=t.className;if(!u.match("(\\s|^)(language-)?"+v+"(\\s|$)")){u=u?(u+" "+v):v}if(/MSIE [678]/.test(navigator.userAgent)&&t.tagName=="CODE"&&t.parentNode.tagName=="PRE"){s=t.parentNode;var p=document.createElement("div");p.innerHTML="<pre><code>"+y.value+"</code></pre>";t=p.firstChild.firstChild;p.firstChild.cN=s.cN;s.parentNode.replaceChild(p.firstChild,s)}else{t.innerHTML=y.value}t.className=u;t.result={language:v,kw:y.keyword_count,re:y.r};if(y.second_best){t.second_best={language:y.second_best.language,kw:y.second_best.keyword_count,re:y.second_best.r}}}function o(){if(o.called){return}o.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=b(r[p]);if(q){n(q,hljs.tabReplace)}}}function l(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",o,false);window.addEventListener("load",o,false)}else{if(window.attachEvent){window.attachEvent("onload",o)}else{window.onload=o}}}var e={};this.LANGUAGES=e;this.highlight=d;this.highlightAuto=g;this.fixMarkup=i;this.highlightBlock=n;this.initHighlighting=o;this.initHighlightingOnLoad=l;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0[xX][a-fA-F0-9]+|(\\d+(\\.\\d*)?|\\.\\d+)([eE][-+]?\\d+)?)";this.BNR="\\b(0b[01]+)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.ER="(?![\\s\\S])";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.BNM={cN:"number",b:this.BNR,r:0};this.inherit=function(r,s){var p={};for(var q in r){p[q]=r[q]}if(s){for(var q in s){p[q]=s[q]}}return p}}();hljs.LANGUAGES.cpp=function(){var a={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1,restrict:1,_Bool:1,complex:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};return{dM:{k:a,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'\\\\?.",e:"'",i:"."},{cN:"number",b:"\\b(\\d+(\\.\\d*)?|\\.\\d+)(u|U|l|L|ul|UL|f|F)"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},{cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:a,r:10,c:["self"]}]}}}();hljs.LANGUAGES.r={dM:{c:[hljs.HCM,{cN:"number",b:"\\b0[xX][0-9a-fA-F]+[Li]?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+(?:[eE][+\\-]?\\d*)?L\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\b\\d+\\.(?!\\d)(?:i\\b)?",e:hljs.IMMEDIATE_RE,r:1},{cN:"number",b:"\\b\\d+(?:\\.\\d*)?(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"number",b:"\\.\\d+(?:[eE][+\\-]?\\d*)?i?\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"keyword",b:"(?:tryCatch|library|setGeneric|setGroupGeneric)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\.",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\.\\.\\d+(?![\\w.])",e:hljs.IMMEDIATE_RE,r:10},{cN:"keyword",b:"\\b(?:function)",e:hljs.IMMEDIATE_RE,r:2},{cN:"keyword",b:"(?:if|in|break|next|repeat|else|for|return|switch|while|try|stop|warning|require|attach|detach|source|setMethod|setClass)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"literal",b:"(?:NA|NA_integer_|NA_real_|NA_character_|NA_complex_)\\b",e:hljs.IMMEDIATE_RE,r:10},{cN:"literal",b:"(?:NULL|TRUE|FALSE|T|F|Inf|NaN)\\b",e:hljs.IMMEDIATE_RE,r:1},{cN:"identifier",b:"[a-zA-Z.][a-zA-Z0-9._]*\\b",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"<\\-(?!\\s*\\d)",e:hljs.IMMEDIATE_RE,r:2},{cN:"operator",b:"\\->|<\\-",e:hljs.IMMEDIATE_RE,r:1},{cN:"operator",b:"%%|~",e:hljs.IMMEDIATE_RE},{cN:"operator",b:">=|<=|==|!=|\\|\\||&&|=|\\+|\\-|\\*|/|\\^|>|<|!|&|\\||\\$|:",e:hljs.IMMEDIATE_RE,r:0},{cN:"operator",b:"%",e:"%",i:"\\n",r:1},{cN:"identifier",b:"`",e:"`",r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE],r:0},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"paren",b:"[[({\\])}]",e:hljs.IMMEDIATE_RE,r:0}]}};
+hljs.initHighlightingOnLoad();
+</script>
+
+
+
+<style type="text/css">
+body, td {
+   font-family: sans-serif;
+   background-color: white;
+   font-size: 13px;
+}
+
+body {
+  max-width: 800px;
+  margin: auto;
+  padding: 1em;
+  line-height: 20px;
+}
+
+tt, code, pre {
+   font-family: 'DejaVu Sans Mono', 'Droid Sans Mono', 'Lucida Console', Consolas, Monaco, monospace;
+}
+
+h1 {
+   font-size:2.2em;
+}
+
+h2 {
+   font-size:1.8em;
+}
+
+h3 {
+   font-size:1.4em;
+}
+
+h4 {
+   font-size:1.0em;
+}
+
+h5 {
+   font-size:0.9em;
+}
+
+h6 {
+   font-size:0.8em;
+}
+
+a:visited {
+   color: rgb(50%, 0%, 50%);
+}
+
+pre, img {
+  max-width: 100%;
+}
+pre {
+  overflow-x: auto;
+}
+pre code {
+   display: block; padding: 0.5em;
+}
+
+code {
+  font-size: 92%;
+  border: 1px solid #ccc;
+}
+
+code[class] {
+  background-color: #F8F8F8;
+}
+
+table, td, th {
+  border: none;
+}
+
+blockquote {
+   color:#666666;
+   margin:0;
+   padding-left: 1em;
+   border-left: 0.5em #EEE solid;
+}
+
+hr {
+   height: 0px;
+   border-bottom: none;
+   border-top-width: thin;
+   border-top-style: dotted;
+   border-top-color: #999999;
+}
+
+@media print {
+   * {
+      background: transparent !important;
+      color: black !important;
+      filter:none !important;
+      -ms-filter: none !important;
+   }
+
+   body {
+      font-size:12pt;
+      max-width:100%;
+   }
+
+   a, a:visited {
+      text-decoration: underline;
+   }
+
+   hr {
+      visibility: hidden;
+      page-break-before: always;
+   }
+
+   pre, blockquote {
+      padding-right: 1em;
+      page-break-inside: avoid;
+   }
+
+   tr, img {
+      page-break-inside: avoid;
+   }
+
+   img {
+      max-width: 100% !important;
+   }
+
+   @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+   }
+
+   @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+   }
+
+   p, h2, h3 {
+      orphans: 3; widows: 3;
+   }
+
+   h2, h3 {
+      page-break-after: avoid;
+   }
+}
+</style>
+
+
+
+</head>
+
+<body>
+<h1>Previous Exams</h1>
+
+<h2>2022</h2>
+
+<p>Packages</p>
+
+<pre><code class="r">library(titanic)
+library(ggplot2)
+library(dplyr)
+</code></pre>
+
+<p>E.R1
+What are the names of the first two arguments used by the function median()?</p>
+
+<pre><code class="r">?median
+</code></pre>
+
+<p>E.R2
+Define a function named is_tensor() that takes one argument, this function returns true if the input array
+has more than 2 dimensions and false if the input array has 2 dimensions or less. The function should also
+produce an error that says “Input must be an array” if the input is not an array. You may only use base
+R functions.</p>
+
+<pre><code class="r">is_tensor &lt;- function(x) {
+  if(!is.array(x)){
+    stop(&quot;Input must be an array&quot;)
+  }
+  if(sum(x &lt;= 2))  {
+    return(FALSE)  }
+  else { 
+    return(TRUE) 
+  }
+}
+# Tests for all student answers
+test_array1 &lt;- array(c(2,4))
+is_tensor(test_array1) # FALSE
+#&gt; [1] FALSE
+test_array2 &lt;- array(1:3, c(2,4,3,4))
+is_tensor(test_array2) # TRUE
+#&gt; [1] FALSE
+not_array &lt;- list()
+is_tensor(not_array) # ERROR
+#&gt; Error in is_tensor(not_array): Input must be an array
+</code></pre>
+
+<p>E.R3
+Using the titanic_train data set from the library titanic, create a function was_there_a that takes one
+argument search_term. This function should return a logical value indicating whether there was a male
+passenger on the Titanic with the search_term being part of their name. You may only use base R functions.</p>
+
+<pre><code class="r">library(titanic)
+was_there_a &lt;- function(search_term) {
+  check &lt;- grepl(search_term, titanic_data$Name[titanic_data$Sex == &quot;male&quot;])
+  return (sum(check) &gt; 0)
+}
+# We used these test cases for every answer
+was_there_a(&quot;Karolina&quot;) # FALSE
+#&gt; Error in is.factor(x): object &#39;titanic_data&#39; not found
+was_there_a(&quot;Owen&quot;) # TRUE
+#&gt; Error in is.factor(x): object &#39;titanic_data&#39; not found
+was_there_a(&quot;Mr&quot;) # TRUE, unless students have a special stop function
+#&gt; Error in is.factor(x): object &#39;titanic_data&#39; not found
+was_there_a(&quot;James&quot;) # TRUE
+#&gt; Error in is.factor(x): object &#39;titanic_data&#39; not found
+was_there_a(&quot;Hippopotamus&quot;) # FALSE
+#&gt; Error in is.factor(x): object &#39;titanic_data&#39; not found
+</code></pre>
+
+<p>E.R4
+Create a array of size 132 by 5 by 360 with random draws from the standard normal distribution in every
+element using rnorm() with default arguments. Now index the 101st to 343rd element of the last dimension
+of your array to return 243 matrices within a 3 dimensional array. Do everything without using any loops
+and only base R functions.</p>
+
+<pre><code class="r">nfirst &lt;- 132
+nsecond &lt;- 5
+nthird &lt;- 360
+normal_draws &lt;- rnorm(nfirst*nsecond*nthird)
+huge_array &lt;- array(normal_draws, dim = c(nfirst, nsecond, nthird))
+subset_array &lt;- huge_array[,,c(101:343)]
+dim(subset_array)
+#&gt; [1] 132   5 243
+
+# Alternate one line
+my_subset &lt;- array(rnorm(132*5*360),360)[101:343]
+dim(my_subset)
+#&gt; [1] 243
+</code></pre>
+
+<p>E.R5
+Load the titanic_train data set from the titanic package into your workspace. What is the percentage
+of the passengers with a known age was under 30 years old?</p>
+
+<pre><code class="r">df &lt;- titanic::titanic_train
+sum(df$Age &lt; 30, na.rm = TRUE) / sum(!is.na(df$Age)) * 100
+#&gt; [1] 53.78151
+# 53.78151
+# This is also full points, the wording of the question does not make it clear what to use in the denom:
+sum(df$Age &lt; 30, na.rm = TRUE) / sum(length(df$Age)) * 100
+#&gt; [1] 43.09764
+# 43.09764```
+## Installation
+</code></pre>
+
+<p>E.R6
+In terms of R style what are two things wrong with the following code? Rewrite the code to fix the problems
+you identified with the R style. You may not use lintr, nor Styler in R Studio.</p>
+
+<pre><code class="r">This line samples 1000 random normal variables and then adds that to 1000 beta
+# variables with shape1 = 1 and shape2 = 2 parameters. Then it takes the
+# absolute value of that sum. Then it takes the square root of the sum. Then it
+# takes the mean of that sum. Then assigns it to the variable &quot;mean_data&quot;
+mean_data &lt;- mean(sqrt(abs(rnorm(1000) + rbeta(1000, shape1 = 1, shape2 = 2))))
+#&gt; Error: &lt;text&gt;:1:6: unexpected symbol
+#&gt; 1: This line
+#&gt;          ^
+</code></pre>
+
+<p>E.R7
+Using the built-in ChickWeight data set, display the weights of the chickens at time point 21 in a violin plot.
+Note that you may (but do not have to) use a function from the ggplot2 library. How many chickens do not
+have a value for this time point?</p>
+
+<pre><code class="r">chick_weight  &lt;- ChickWeight
+
+# filter for time point 21
+chick21 &lt;- chick_weight  %&gt;% filter(Time == 21)
+
+# Converting Time to factor variable
+chick21$Time &lt;- as.factor(chick21$Time)
+
+# Create violin plot
+ggplot(chick21, aes(x = Time, y = weight)) + geom_violin() 
+</code></pre>
+
+<p><img src="data:image/png;base64,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" alt="plot of chunk unnamed-chunk-9" width="100%" /></p>
+
+<pre><code class="r"># Full points if x-axis and y-axis are flipped
+
+
+a &lt;- length(unique(chick_weight$Chick))
+b&lt;- length(chick21$Chick)
+a-b
+#&gt; [1] 5
+# 5 missing
+</code></pre>
+
+<p>E.R8
+Create the following data.frame without typing out the full vector of any of the columns.</p>
+
+<h2>year people government</h2>
+
+<h2>1 -60 Roman republic</h2>
+
+<h2>2 -40 Roman republic</h2>
+
+<h2>3 -20 Roman empire</h2>
+
+<h2>4 0 Roman empire</h2>
+
+<pre><code class="r">year &lt;-seq(-60 , 0, 20)
+people &lt;- rep(c(&quot;Roman&quot;), 4)
+government &lt;- rep(c(&quot;republic&quot;,&quot;empire&quot;), each=2)
+data.frame(year,people,government)
+#&gt;   year people government
+#&gt; 1  -60  Roman   republic
+#&gt; 2  -40  Roman   republic
+#&gt; 3  -20  Roman     empire
+#&gt; 4    0  Roman     empire
+</code></pre>
+
+</body>
+
+</html>
